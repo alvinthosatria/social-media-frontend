@@ -1,0 +1,180 @@
+@import "../../style.scss";
+
+.register {
+  height: 100vh;
+  background-color: rgb(193, 190, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .card {
+    width: 60%;
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: white;
+    border-radius: 10px;
+    height: 550px;
+    overflow: hidden;
+
+    @include mobile {
+      flex-direction: column-reverse;
+    }
+
+    .left {
+      flex: 1;
+      background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
+        url("https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600")
+          center;
+      background-size: cover;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      color: white;
+
+      @include mobile {
+        display: none;
+      }
+
+      @include tablet {
+        padding: 25px;
+        gap: 25px;
+      }
+
+      h1 {
+        font-size: 90px;
+        line-height: 90px;
+
+        @include tablet {
+          font-size: 65px;
+          line-height: 55px;
+          margin-bottom: 20px;
+        }
+      }
+
+      span {
+        font-size: 14px;
+      }
+      
+      button {
+        width: 50%;
+        padding: 10px;
+        border: none;
+        background-color: white;
+        color: rebeccapurple;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+
+    .right {
+      flex: 1;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      justify-content: center;
+      overflow: scroll;
+
+      .mobile-login {
+        display: none;
+
+        @include mobile {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        p {
+          font-size: 12px;
+        }
+
+        button {
+          color: #938eef;
+          background-color: white;
+        }
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      h1 {
+        color: #555;
+      }
+      
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .file {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px;
+          position: relative;
+          margin: auto;
+
+          input {
+            border: solid;
+            position: absolute;
+            top: 30px;
+            width: 75px;
+            height: 55px;
+            opacity: 0;
+            cursor: pointer;
+          }
+
+          label {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            color: gray;
+            font-size: 14px;
+    
+            .imgContainer {
+              position: relative;
+              img {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+              }
+    
+              .icon {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                font-size: 30px;
+                color: lightgray;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+        
+        input {
+          border: none;
+          border-bottom: 1px solid lightgray;
+          padding: 20px 10px;
+        }
+        
+        button {
+          width: 50%;
+          padding: 10px;
+          border: none;
+          background-color: #938eef;
+          color: white;
+          font-weight: bold;
+          cursor: pointer;
+
+          @include mobile {
+            width: 75%;
+          }
+        }
+      }
+    }
+  }
+}
